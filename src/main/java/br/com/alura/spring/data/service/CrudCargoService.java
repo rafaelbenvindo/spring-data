@@ -25,6 +25,7 @@ public class CrudCargoService {
 			System.out.println("0 - Sair");
 			System.out.println("1 - Salvar");
 			System.out.println("2 - Atualizar");
+			System.out.println("3 - Listar");
 
 			int action = scanner.nextInt();
 			switch (action) {
@@ -34,7 +35,9 @@ public class CrudCargoService {
 			case 2:
 				atualizar(scanner);
 				break;
-
+			case 3:
+				visualizar();
+				break;
 			default:
 				system = false;
 				break;
@@ -70,6 +73,11 @@ public class CrudCargoService {
 			System.out.println("Não existe cargo com este id.");
 		}
 
+	}
+
+	private void visualizar() {
+		Iterable<Cargo> cargos = cargoRepository.findAll();
+		cargos.forEach(cargo -> System.out.println(cargo));
 	}
 
 }
