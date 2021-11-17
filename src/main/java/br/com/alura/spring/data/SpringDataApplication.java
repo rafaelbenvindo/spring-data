@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import br.com.alura.spring.data.service.CrudCargoService;
 import br.com.alura.spring.data.service.CrudFuncionarioService;
 import br.com.alura.spring.data.service.CrudUnidadeService;
+import br.com.alura.spring.data.service.RelatoriosService;
 
 @SpringBootApplication
 public class SpringDataApplication implements CommandLineRunner {
@@ -18,12 +19,14 @@ public class SpringDataApplication implements CommandLineRunner {
 	private final CrudCargoService cargoService;
 	private final CrudUnidadeService unidadeService;
 	private final CrudFuncionarioService funcionarioService;
+	private final RelatoriosService relatoriosService;
 
 	public SpringDataApplication(CrudCargoService cargoService, CrudUnidadeService unidadeService,
-			CrudFuncionarioService funcionarioService) {
+			CrudFuncionarioService funcionarioService, RelatoriosService relatoriosService) {
 		this.cargoService = cargoService;
 		this.unidadeService = unidadeService;
 		this.funcionarioService = funcionarioService;
+		this.relatoriosService = relatoriosService;
 	}
 
 	public static void main(String[] args) {
@@ -40,6 +43,7 @@ public class SpringDataApplication implements CommandLineRunner {
 			System.out.println("1 - Cargo");
 			System.out.println("2 - Unidade");
 			System.out.println("3 - Funcionário");
+			System.out.println("4 - Relatórios");
 
 			int action = scanner.nextInt();
 			switch (action) {
@@ -54,6 +58,11 @@ public class SpringDataApplication implements CommandLineRunner {
 			case 3:
 				funcionarioService.inicial(scanner);
 				break;
+
+			case 4:
+				relatoriosService.inicial(scanner);
+				break;
+
 			default:
 				system = false;
 				break;
