@@ -1,5 +1,6 @@
 package br.com.alura.spring.data.repository;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -14,5 +15,5 @@ public interface FuncionarioRepository extends CrudRepository<Funcionario, Integ
 	List<Funcionario> findByNomeContains(String nome);
 
 	@Query("SELECT f FROM Funcionario f WHERE f.nome = :nome AND f.salario >= :salario AND f.dataContratacao = :data")
-	List<Funcionario> findNomeDataContratacaoSalarioMario(String nome, Double salario, LocalDate data);
+	List<Funcionario> findNomeDataContratacaoSalarioMario(String nome, BigDecimal salario, LocalDate data);
 }
