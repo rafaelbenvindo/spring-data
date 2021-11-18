@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.com.alura.spring.data.orm.Cargo;
@@ -134,7 +135,7 @@ public class CrudFuncionarioService {
 		System.out.print("Qual página você deseja visualizar? ");
 		int page = scanner.nextInt() - 1;
 
-		Pageable pageable = PageRequest.of(page, 2);
+		Pageable pageable = PageRequest.of(page, 2, Sort.by(Sort.Direction.ASC, "nome"));
 
 		Page<Funcionario> funcionarios = funcionarioRepository.findAll(pageable);
 
