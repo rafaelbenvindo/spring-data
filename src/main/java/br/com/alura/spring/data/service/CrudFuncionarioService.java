@@ -34,6 +34,7 @@ public class CrudFuncionarioService {
 	}
 
 	public void inicial(Scanner scanner) {
+		system = true;
 		while (system) {
 			System.out.println("Escolha a operação (Funcionário):");
 			System.out.println("0 - Sair");

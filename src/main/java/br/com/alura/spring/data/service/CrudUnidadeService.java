@@ -20,6 +20,7 @@ public class CrudUnidadeService {
 	}
 
 	public void inicial(Scanner scanner) {
+		system = true;
 		while (system) {
 			System.out.println("Escolha a operação (Unidade):");
 			System.out.println("0 - Sair");

@@ -22,6 +22,7 @@ public class RelatoriosService {
 	}
 
 	public void inicial(Scanner scanner) {
+		system = true;
 		while (system) {
 			System.out.println("Escolha a operação:");
 			System.out.println("0 - Sair");
